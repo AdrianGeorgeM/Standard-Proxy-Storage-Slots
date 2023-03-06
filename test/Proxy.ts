@@ -20,10 +20,10 @@ describe('Proxy', function () {
 	}
 
 	it('Should work with logic1', async function () {
-		const {} = await loadFixture(deployFixture);
+		const { proxy, logic1 } = await loadFixture(deployFixture); // loadFixture will run the deployFixture function and return the values in the return object
 	});
 
-	it('Should work with upgrades', async function () {
-		const {} = await loadFixture(deployFixture);
-	});
+	// it('Should work with upgrades', async function () {
+	// 	const {} = await loadFixture(deployFixture);
+	// });
 });

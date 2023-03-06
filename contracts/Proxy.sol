@@ -15,6 +15,10 @@ contract Proxy {
     function changeImplementation(address _implementation) external {
         implementation = _implementation;
     }
+
+    function changeX(uint _x) external {
+        Logic1(implementation).changeX(_x);
+    }
 }
 
 contract Logic1 {
