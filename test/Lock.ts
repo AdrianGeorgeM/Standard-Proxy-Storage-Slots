@@ -20,10 +20,10 @@ describe('Proxy', function () {
 	}
 
 	it('Should work with logic1', async function () {
-		const { lock, unlockTime } = await loadFixture(deployFixture);
+		const {} = await loadFixture(deployFixture);
 	});
 
 	it('Should work with upgrades', async function () {
-		const { lock, owner } = await loadFixture(deployFixture);
+		const {} = await loadFixture(deployFixture);
 	});
 });

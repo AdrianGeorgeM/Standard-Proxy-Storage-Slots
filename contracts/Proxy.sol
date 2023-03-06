@@ -1,8 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-// Uncomment this line to use console.log
 // import "hardhat/console.sol";
+
+// EOA = externally owned account (user)
+// Proxy = contract that can be controlled by an EOA
+// Logic = contract that can be controlled by a Proxy
+// EOA -> Proxy -> Logic1
+//              -> Logic2
 
 contract Proxy {
 
