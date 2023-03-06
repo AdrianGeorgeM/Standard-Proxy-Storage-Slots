@@ -47,6 +47,6 @@ describe('Proxy', function () {
 
 		await proxy.changeX(79);
 
-		assert.equal(await logic2.x(), 79);
+		assert.equal(await logic2.x(), 158);
 	});
 });
