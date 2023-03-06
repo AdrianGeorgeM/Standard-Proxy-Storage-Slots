@@ -1,13 +1,9 @@
-# Sample Hardhat Project
+# Evolution of Proxies
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This Proxy should only be used for learning purposes!
 
-Try running some of the following tasks:
+One thing that it does not do is return the return value in the fallback function.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+This can only be done by dropping down into assembly code, as shown by the OpenZeppelin proxy logic here.
+
+In general, you should try to stick to using proxies that are audited and battle tested!
