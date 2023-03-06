@@ -30,9 +30,9 @@ contract Logic1 {
 }
 
 contract Logic2 {
-    uint public y = 0;
+    uint public x = 0;
 
-    function changeY(uint _y) external {
-        y = _y;
+    function changeY(uint _x) external {
+        x = _x;
     }
 }
