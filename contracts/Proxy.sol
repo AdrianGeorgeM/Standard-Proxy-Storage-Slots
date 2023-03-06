@@ -10,7 +10,11 @@ pragma solidity ^0.8.9;
 //              -> Logic2
 
 contract Proxy {
+    address implementation;
 
+    function changeImplementation(address _implementation) external {
+        implementation = _implementation;
+    }
 }
 
 contract Logic1 {}
