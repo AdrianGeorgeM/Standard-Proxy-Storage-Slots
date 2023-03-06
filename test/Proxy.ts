@@ -20,9 +20,8 @@ describe('Proxy', function () {
 	}
 
 	it('Should work with logic1', async function () {
-		//
-		const { proxy, logic1 } = await loadFixture(deployFixture); //
-		await proxy.changeImplementation(logic1);
+		const { proxy, logic1 } = await loadFixture(deployFixture);
+		await proxy.changeImplementation(logic1.address);
 
 		assert.equal(await logic1.x(), 0);
 
