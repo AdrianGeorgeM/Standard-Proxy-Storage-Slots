@@ -17,6 +17,18 @@ contract Proxy {
     }
 }
 
-contract Logic1 {}
+contract Logic1 {
+    uint public x = 0;
 
-contract Logic2 {}
+    function changeX(uint _x) external {
+        x = _x;
+    }
+}
+
+contract Logic2 {
+    uint public y = 0;
+
+    function changeY(uint _y) external {
+        y = _y;
+    }
+}
