@@ -1,5 +1,6 @@
 import { loadFixture } from '@nomicfoundation/hardhat-network-helpers';
 import { assert } from 'chai';
+import { BigNumberish } from 'ethers';
 import { ethers } from 'hardhat';
 
 describe('Proxy', function () {
@@ -21,7 +22,10 @@ describe('Proxy', function () {
 	}
 
 	//eth_getStorageAt
-	async function lookupUint(contractAddr, slot) {
+	async function lookupUint(
+		contractAddr: string | Promise<string>,
+		slot: BigNumberish | Promise<BigNumberish>
+	) {
 		return parseInt(await ethers.provider.getStorageAt(contractAddr, slot));
 	}
 
