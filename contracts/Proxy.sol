@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
+import "./StorageSlot.sol";
 
 // import "hardhat/console.sol";
 
@@ -10,20 +11,23 @@ pragma solidity ^0.8.9;
 //              -> Logic2
 
 contract Proxy {
-    address implementation;
+    // address implementation;
 
     function changeImplementation(address _implementation) external {
-        implementation = _implementation;
+        StorageSlot.getAddressSlot(keccak256("impl")).value = _implementation;
     }
 
     fallback() external {
-        (bool success, ) = implementation.delegatecall(msg.data);
+        (bool success, ) = StorageSlot
+            .getAddressSlot(keccak256("impl"))
+            .value
+            .delegatecall(msg.data);
         require(success);
     }
 
-    function changeX(uint _x) external {
-        Logic1(implementation).changeX(_x);
-    }
+    // function changeX(uint _x) external {
+    //     Logic1(implementation).changeX(_x);
+    // }
 }
 
 contract Logic1 {
