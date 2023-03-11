@@ -31,23 +31,26 @@ describe('Proxy', function () {
 		assert.equal(await logic1.x(), 52);
 	});
 
-	// it('Should work with upgrades', async function () {
-	// 	const { proxy, logic1, logic2 } = await loadFixture(deployFixture);
+	it('Should work with upgrades', async function () {
+		const { proxy, logic1, logic2, proxyAsLogic2, proxyAsLogic1 } = await loadFixture(
+			deployFixture
+		);
 
-	// 	await proxy.changeImplementation(logic1.address);
+		await proxy.changeImplementation(logic1.address);
 
-	// 	assert.equal(await logic1.x(), 0);
+		assert.equal(await logic1.x(), 0);
 
-	// 	await proxy.changeX(45);
+		await proxyAsLogic1.changeX(45);
 
-	// 	assert.equal(await logic1.x(), 45);
+		assert.equal(await logic1.x(), 45);
 
-	// 	await proxy.changeImplementation(logic2.address);
+		await proxy.changeImplementation(logic2.address);
 
-	// 	assert.equal(await logic2.x(), 0);
+		assert.equal(await logic2.x(), 0);
 
-	// 	await proxy.changeX(79);
+		await proxyAsLogic2.changeX(25);
+		await proxyAsLogic2.tripleX();
 
-	// 	assert.equal(await logic2.x(), 158);
-	// });
+		assert.equal(await logic2.x(), 75);
+	});
 });

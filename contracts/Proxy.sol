@@ -27,6 +27,7 @@ contract Proxy {
 }
 
 contract Logic1 {
+    mapping(address => uint) balances;
     uint public x = 0;
 
     function changeX(uint _x) external {
@@ -41,7 +42,7 @@ contract Logic2 {
         x = _x * 2;
     }
 
-    function tripleX(uint _x) external {
-        _x *= 3;
+    function tripleX() external {
+        x *= 3;
     }
 }
